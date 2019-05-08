@@ -1,0 +1,14 @@
+class Osoba{
+public:
+    string imie;
+    string nazwisko;
+    string miasto;
+    string ulica;
+    int telefon;
+    int pesel;
+    string kolor_oczu;
+    string data_ur;
+    int wzrost;
+    int l_dzieci;
+    int zarobki;
+};
