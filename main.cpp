@@ -1,4 +1,5 @@
 #include <iostream>
+#include "class_person.hpp"
 
 #include <string>
 int main() {
