@@ -1,3 +1,7 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+
 class Osoba{
 public:
     //potrzebny konstruktor
