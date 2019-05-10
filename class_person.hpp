@@ -22,4 +22,27 @@ public:
     //należy napisać funkcję tworzącą parę klucz(pesel) oraz wartość(imię i nazwisko)
 
 };
+
+class PersonData : public Person{
+private:
+    std::string town_;
+    std::string street_;
+    int phone_num_;
+    std::string eye_color_;
+    std::string date_birth_;
+    int height_;
+    int num_kids_;
+    int wage_;
+public:
+   //konstruktor klasy dziedziczacej
+    std::string get_town()const { return town_; }
+    std::string get_street()const { return street_; }
+    int get_phone()const { return phone_num_; }
+    std::string get_eye()const { return eye_color_; }
+    std::string get_birth()const { return date_birth_; }
+    int get_height()const { return height_; }
+    int get_kids()const { return num_kids_; }
+    int get_wage()const { return wage_; }
+
+};
 #endif
