@@ -1,0 +1,25 @@
+void add_person(){
+
+    cout<<"Give name: ;
+    cin>>name_;
+    cout<<"Give surname: ;
+    cin>>surname_;
+    cout<<"Give PESEL number: ;
+    cin>>pesel_num_;
+    cout<<"Give town: ;
+    cin>>town_;
+    cout<<"Give street: ;
+    cin>>street_;
+    cout<<"Give phone number: ;
+    cin>>phone_num_;
+    cout<<"Give eye color: ;
+    cin>>eye_color_;
+    cout<<"Give date of birth: ;
+    cin>>date_birth_;
+    cout<<"Give height: ;
+    cin>>height_;
+    cout<<"Give number of kids: ;
+    cin>>num_kids_;
+    cout<<"Give wage: ;
+    cin>>wage_;
+}
