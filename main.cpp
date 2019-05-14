@@ -1,6 +1,6 @@
 #include <iostream>
 #include "class_person.hpp"
-
+#include "functions.cpp"
 #include <string>
 int main() {
 
@@ -27,25 +27,33 @@ int main() {
                     cout <<"\t << EXIT THE PROGRAMME >>" << endl;
                     break;
                 case 1:
-                    //instructions 
+                    //instructions
                     break;
                 case 2:
-                    //instructions 
+                    //instructions
                     break;
                 case 3:
-                    //instructions 
+                    //instructions
                     break;
                 case 4:
-                    //instructions 
+                    print_all(...);
+                    // wstawić iterator po tablicy klas
+                    // konstrukcji (vector<PersonData>::iterator i)
+                    // do poprawnego działania potrzebuje
+                    // funkcji view_person(i)
                     break;
                 case 5:
-                    //instructions 
+                    //instructions
                     break;
                 case 6:
-                    //instructions 
+                    //instructions
                     break;
                 case 7:
-                    //instructions 
+                    delate_all(...)
+                    // wstawić iterator po tablicy klas
+                    // konstrukcji (vector<PersonData>::iterator i)
+                    // do poprawnego działania potrzebuje
+                    // funkcji delate_person (i)
                     break;
 
                 default:
@@ -59,4 +67,3 @@ int main() {
         return 0;
 
     }
-
