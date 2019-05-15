@@ -1,25 +1,29 @@
 void add_person(){
 
+    Person * newp = new person;
+    newp->next = NULL;
+    // dodac w klasie:  Person * next
+
     cout<<"Give name: ;
-    cin>>name_;
+    cin>>newp.name_;
     cout<<"Give surname: ;
-    cin>>surname_;
+    cin>>newp.surname_;
     cout<<"Give PESEL number: ;
-    cin>>pesel_num_;
+    cin>>newp.pesel_num_;
     cout<<"Give town: ;
-    cin>>town_;
+    cin>>newp.town_;
     cout<<"Give street: ;
-    cin>>street_;
+    cin>>newp.street_;
     cout<<"Give phone number: ;
-    cin>>phone_num_;
+    cin>>newp.phone_num_;
     cout<<"Give eye color: ;
-    cin>>eye_color_;
+    cin>>newp.eye_color_;
     cout<<"Give date of birth: ;
-    cin>>date_birth_;
+    cin>>newp.date_birth_;
     cout<<"Give height: ;
-    cin>>height_;
+    cin>>newp.height_;
     cout<<"Give number of kids: ;
-    cin>>num_kids_;
+    cin>>newp.num_kids_;
     cout<<"Give wage: ;
-    cin>>wage_;
+    cin>>newp.wage_;
 }
