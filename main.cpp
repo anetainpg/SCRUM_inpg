@@ -27,7 +27,8 @@ int main() {
                     cout <<"\t << EXIT THE PROGRAMME >>" << endl;
                     break;
                 case 1:
-                    //instructions
+                    cout<< " YOU CHOSE ADD NEW PERSON"<< endl;
+                    add_person();
                     break;
                 case 2:
                     //instructions
