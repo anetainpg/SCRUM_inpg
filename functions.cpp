@@ -25,7 +25,7 @@ void delate_all(vector<PersonData>::iterator i){
 //umieszczone w bazie danych
 void print_all(vector<PersonData>::iterator i){
     for(i=tab.begin(); i!=tab.end(); ++i){
-        int n=i+1
+        int n=i+1;
         std::cout<<n <<endl;
         view_person(i);
     }
