@@ -4,12 +4,11 @@
 #include <string>
 #include <cstdlib>
 #include <vector>
-
+#include <map>
 class Person{
 private:
     std::string name_;
     std::string surname_;
-    std::vector<std::string> vect_name_sur_{name_,surname_};
     int pesel_num_;
     std::string town_;
     std::string street_;
@@ -20,21 +19,9 @@ private:
     int num_kids_;
     int wage_;
 public:
-    Person(std::vector<std::string> vect_name_sur, int pesel_num) :
-           vect_name_sur_(vect_name_sur), pesel_num_(pesel_num) {}
-
-    std::string get_name() const { return name_; }
-    std::string get_surname() const { return surname_; }
-    int get_pesel() const { return pesel_num_; }
-
-    //należy napisać funkcję tworzącą parę klucz(pesel) oraz wartość(imię i nazwisko)
-
-};
-
-class PersonData : public Person{
-private:
-
-public:
+    std::string get_name()const { return name_; }
+    std::string get_surname()const { return surname_; }
+    int get_pesel(){ return pesel_num_;}
     std::string get_town()const { return town_; }
     std::string get_street()const { return street_; }
     int get_phone()const { return phone_num_; }
@@ -44,10 +31,28 @@ public:
     int get_kids()const { return num_kids_; }
     int get_wage()const { return wage_; }
 
+
+    //należy napisać funkcję tworzącą parę klucz(pesel) oraz wartość(imię i nazwisko)
+
 };
 
-class list{
+
+
+class List{
+    public:
+        void add_person(int pesel);
+        void edit_person(int pesel);
+        void delete_person(int pesel);
     private:
-        std::map<>
+        std::map<int, class Person> lst;
 };
+
+void List::add_person(int pesel) {
+    int numer_pesel;
+    std::cin>>numer_pesel;
+    Person newperson;
+    lst[pesel]=newperson;
+
+}
+
 #endif

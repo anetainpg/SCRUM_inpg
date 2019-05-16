@@ -2,7 +2,7 @@
 #include "class_person.hpp"
 #include <string>
 int main() {
-
+        List Data;
         int tmp = 0;
         do {
             std::cout << "\n\t Welcome to data base of all creatures living in this Universe!" << std::endl;
@@ -27,7 +27,8 @@ int main() {
                     break;
                 case 1:
                     std::cout<< " YOU CHOSE ADD NEW PERSON"<< std::endl;
-                    //add_person();
+                    std::cout<< "Please add PESEL number(manditory):"<< std::endl;
+                    Data.add_person();
                     break;
                 case 2:
                     //instructions
