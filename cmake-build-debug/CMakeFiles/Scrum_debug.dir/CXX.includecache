@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/class_person.hpp
+iostream
+-
+string
+-
+cstdlib
+-
+vector
+-
+
+C:/Users/dawid/Desktop/Scrum/SCRUM_inpg/main.cpp
+iostream
+-
+class_person.hpp
+C:/Users/dawid/Desktop/Scrum/SCRUM_inpg/class_person.hpp
+string
+-
+

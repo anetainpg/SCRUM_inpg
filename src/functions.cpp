@@ -2,9 +2,10 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include "class_person.hpp"
 
-
-void print_all(vector<PersonData>::iterator i)
+/*
+void print_all(vector<PersonData>::iterator i){}
 
 
 
@@ -30,3 +31,4 @@ void print_all(vector<PersonData>::iterator i){
         view_person(i);
     }
 }
+*/

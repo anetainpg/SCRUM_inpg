@@ -11,6 +11,14 @@ private:
     std::string surname_;
     std::vector<std::string> vect_name_sur_{name_,surname_};
     int pesel_num_;
+    std::string town_;
+    std::string street_;
+    int phone_num_;
+    std::string eye_color_;
+    std::string date_birth_;
+    int height_;
+    int num_kids_;
+    int wage_;
 public:
     Person(std::vector<std::string> vect_name_sur, int pesel_num) :
            vect_name_sur_(vect_name_sur), pesel_num_(pesel_num) {}
@@ -25,17 +33,8 @@ public:
 
 class PersonData : public Person{
 private:
-    std::string town_;
-    std::string street_;
-    int phone_num_;
-    std::string eye_color_;
-    std::string date_birth_;
-    int height_;
-    int num_kids_;
-    int wage_;
+
 public:
-   PersonData(std::vector<std::string> vect_name_sur, int pesel_num, std::string town_, std::string street_, int phone_num_, std::string eye_color_, std::string date_birth_, int height_, int num_kids_, int wage_) :
-            Person(vect_name_sur,pesel_num), town_(town), street_(street), phone_num_(phone_num), eye_color_(eye_color), date_birth_(date_birth), height_(height), num_kids_(num_kids), wage_(wage) {}
     std::string get_town()const { return town_; }
     std::string get_street()const { return street_; }
     int get_phone()const { return phone_num_; }
@@ -45,5 +44,10 @@ public:
     int get_kids()const { return num_kids_; }
     int get_wage()const { return wage_; }
 
+};
+
+class list{
+    private:
+        std::map<>
 };
 #endif
