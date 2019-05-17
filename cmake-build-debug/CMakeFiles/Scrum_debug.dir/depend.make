@@ -4,5 +4,6 @@
 CMakeFiles/Scrum_debug.dir/main.cpp.obj: ../include/class_person.hpp
 CMakeFiles/Scrum_debug.dir/main.cpp.obj: ../main.cpp
 
+CMakeFiles/Scrum_debug.dir/src/functions.cpp.obj: ../include/class_person.hpp
 CMakeFiles/Scrum_debug.dir/src/functions.cpp.obj: ../src/functions.cpp
 

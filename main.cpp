@@ -9,8 +9,8 @@ int main() {
             std::cout << "What would you like to do? (Select the right number)" << std::endl;
             std::cout << "" << std::endl;
             std::cout << "\t 1. Add a new person" << std::endl;
-            std::cout << "\t 2. Track a person with his/hers PESEL number" << std::endl;
-            std::cout << "\t 3. Track a person with his/hers phone number" << std::endl;
+            std::cout << "\t 2. Track a person with his/hers PESEL number(WIP)" << std::endl;
+            std::cout << "\t 3. Track a person with his/hers phone number(WIP)" << std::endl;
             std::cout << "\t 4. Show all the people in the data base" << std::endl;
             std::cout << "\t 5. Edit a person (add or change features)" << std::endl;
             std::cout << "\t 6. Delete a person" << std::endl;
@@ -27,7 +27,6 @@ int main() {
                     break;
                 case 1:
                     std::cout<< " YOU CHOSE ADD NEW PERSON"<< std::endl;
-                    std::cout<< "Please add PESEL number(manditory):"<< std::endl;
                     Data.add_person();
                     break;
                 case 2:
@@ -37,13 +36,14 @@ int main() {
                     //instructions
                     break;
                 case 4:
-                   // print_all(...);
+                    Data.view_list();
                     // wstawić iterator po tablicy klas
                     // konstrukcji (vector<PersonData>::iterator i)
                     // do poprawnego działania potrzebuje
                     // funkcji view_person(i)
                     break;
                 case 5:
+                    Data.edit_person();
                     //instructions
                     break;
                 case 6:
