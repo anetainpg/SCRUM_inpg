@@ -50,6 +50,7 @@ int main() {
                     //instructions
                     break;
                 case 7:
+                    Data.eraseall();
                     //delate_all(...)
                     // wstawić iterator po tablicy klas
                     // konstrukcji (vector<PersonData>::iterator i)

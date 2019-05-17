@@ -107,6 +107,8 @@ class List{
                             std::cout << "0. Exit"<<std::endl;
                             std::cin >> choice;
                             switch (choice) {
+                                case 0:
+                                    return;
                                 case 1:
                                     std::string newname;
                                     std::cout<<"Type new name:"<<std::endl;
