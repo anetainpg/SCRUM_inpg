@@ -70,6 +70,23 @@ class List{
                 std::cout<<i+1<<"."<<list_[i].get_name()<<" "<<list_[i].get_surname()<<" PESEL: "<<list_[i].get_pesel()<<" Phone nr: "<<list_[i].get_phone()<<std::endl;
             }
         }
+      void eraseall(){
+            wrong:
+            std::string choice;
+            std::cout<<"Are you sure you want to delete all entries? Type YES to delete or NO to cancel"<<std::endl;
+            std::cin>>choice;
+            if(choice=="YES"|| choice=="yes"){
+                list_.erase(list_.begin(),list_.end());
+                std::cout<<"Erasing everyone"<<std::endl;
+                return;
+            }else if(choice=="NO"||choice =="no"){
+                return;
+            }else{
+                std::cout<<"Unrecognised command, please try again"<<std::endl;
+                goto wrong;
+            }
+            return;
+        }
         void edit_person(){
 
             for (;;){
