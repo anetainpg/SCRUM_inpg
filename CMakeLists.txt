@@ -15,3 +15,18 @@ set(SOURCE_FILES
 add_executable(Scrum_debug ${SOURCE_FILES} main.cpp)
 
 # == Unit testing using Google Testing Framework ==
+
+set(SOURCES_FILES_TESTS
+        test/tests.cpp
+        )
+
+add_executable(SCRUM_inpg_test ${SOURCE_FILES} ${SOURCES_FILES_TESTS} test/main_gtest.cpp)
+
+target_include_directories(inpg_2__test PUBLIC
+        ../../googletest-master/googlemock/include
+        ../../googletest-master/googletest/include
+        )
+
+add_subdirectory(../../googletest-master googletest-master)
+
+target_link_libraries(SCRUM_inpg_test gmock)
