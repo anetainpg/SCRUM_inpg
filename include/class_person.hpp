@@ -11,22 +11,25 @@ class Person{
 private:
     std::string name_;
     std::string surname_;
-    int pesel_num_;
+    long pesel_num_;
     std::string town_;
     std::string street_;
-    int phone_num_;
+    long phone_num_;
     std::string eye_color_;
     std::string date_birth_;
     int height_;
     int num_kids_;
     int wage_;
 public:
+    Person(std::string name, std::string surname, long pesel, long phone_num) :
+                         name_(name), surname_(surname), pesel_(pesel), phone_num_(phone_num) {}
+    
     std::string get_name()const { return name_; }
     std::string get_surname()const { return surname_; }
-    int get_pesel(){ return pesel_num_;}
+    long get_pesel(){ return pesel_num_;}
     std::string get_town()const { return town_; }
     std::string get_street()const { return street_; }
-    int get_phone()const { return phone_num_; }
+    long get_phone()const { return phone_num_; }
     std::string get_eye()const { return eye_color_; }
     std::string get_birth()const { return date_birth_; }
     int get_height()const { return height_; }
@@ -47,6 +50,9 @@ public:
 
 class List{
     public:
+        
+        std::vector<class Person> get_list()const{return list_;}
+
         void add_person() {
             Person new_person;
             int numer;
@@ -65,11 +71,13 @@ class List{
             new_person.set_phone_num(numer);
             list_.push_back(new_person);
         }
+
         void view_list(){
             for (std::size_t i=0;i<list_.size();i++){
                 std::cout<<i+1<<"."<<list_[i].get_name()<<" "<<list_[i].get_surname()<<" PESEL: "<<list_[i].get_pesel()<<" Phone nr: "<<list_[i].get_phone()<<std::endl;
             }
         }
+
       void eraseall(){
             wrong:
             std::string choice;
@@ -87,6 +95,7 @@ class List{
             }
             return;
         }
+        
         void edit_person(){
 
             for (;;){

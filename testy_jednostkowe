@@ -1,0 +1,21 @@
+#include "gtest/gtest.h" 
+#include "include/class_person.hpp" 
+ 
+TEST(AddPerson, function){ 
+    Person person("Jan", "Kowalski", 12345678987, 854321683);
+    List list = {};
+    list.add_person(person);
+
+    std::vector<class Person> temp_list = list.get_list();
+    Person temp_person = temp_list.pull_back();
+
+    ASSERT_EQ("Jan", temp_person.get_name());
+    ASSERT_EQ("Kowalski", temp_person.get_surname());
+    ASSERT_EQ(12345678987, temp_person.get_pesel());
+    ASSERT_EQ(854321683, temp_person.get_phone());
+    
+} 
+ 
+TEST(DeleteAll, function){ 
+    //tworzenie osób w pętli for? 
+}
