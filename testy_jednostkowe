@@ -2,17 +2,29 @@
 #include "include/class_person.hpp" 
  
 TEST(AddPerson, function){ 
-    Person person("Jan", "Kowalski", 12345678987, 854321683);
-    List list = {};
-    list.add_person(person);
+    Person person_1("Jan", "Kowalski", 12345678987, 854321683);
+    List list_1 = {};
+    list.add_person(person_1);
 
-    std::vector<class Person> temp_list = list.get_list();
-    Person temp_person = temp_list.pull_back();
+    std::vector<class Person> temp_list_1 = list_1.get_list();
+    Person temp_person_1 = temp_list_1.pull_back();
 
-    ASSERT_EQ("Jan", temp_person.get_name());
-    ASSERT_EQ("Kowalski", temp_person.get_surname());
-    ASSERT_EQ(12345678987, temp_person.get_pesel());
-    ASSERT_EQ(854321683, temp_person.get_phone());
+    Person person_2("Anna", "Burczymucha", 12000000000, 101010101);
+    List list_2 = {};
+    list.add_person(person_2)
+
+    std::vector<class Person> temp_list_2 = list_2.get_list();
+    Person temp_person_2 = temp_list_2.pull_back();
+
+    ASSERT_EQ("Jan", temp_person_1.get_name());
+    ASSERT_EQ("Kowalski", temp_person_1.get_surname());
+    ASSERT_EQ(12345678987, temp_person_1.get_pesel());
+    ASSERT_EQ(854321683, temp_person_1.get_phone());
+
+    ASSERT_EQ("Anna", temp_person_2.get_name());
+    ASSERT_EQ("Burczymucha", temp_person_2.get_surname());
+    ASSERT_EQ(12000000000, temp_person_2.get_pesel());
+    ASSERT_EQ(101010101, temp_person_2.get_phone());
     
 } 
  
