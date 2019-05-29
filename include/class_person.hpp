@@ -78,11 +78,11 @@ class List{
             }
         }
 
-      void eraseall(){
+      void eraseall(std::string option){
             wrong:
-            std::string choice;
+            std::string choice = option;
             std::cout<<"Are you sure you want to delete all entries? Type YES to delete or NO to cancel"<<std::endl;
-            std::cin>>choice;
+            //std::cin>>choice;
             if(choice=="YES"|| choice=="yes"){
                 list_.erase(list_.begin(),list_.end());
                 std::cout<<"Erasing everyone"<<std::endl;

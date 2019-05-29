@@ -3,19 +3,16 @@
  
 TEST(AddPerson, function){ 
     Person person_1("Jan", "Kowalski", 12345678987, 854321683);
-    List list_1 = {};
-    list.add_person(person_1);
-
-    std::vector<class Person> temp_list_1 = list_1.get_list();
-    Person temp_person_1 = temp_list_1.pull_back();
-
     Person person_2("Anna", "Burczymucha", 12000000000, 101010101);
-    List list_2 = {};
-    list.add_person(person_2)
+    List list = {};
+    list.add_person(person_1);
+    list.add_person(person_2);
 
-    std::vector<class Person> temp_list_2 = list_2.get_list();
-    Person temp_person_2 = temp_list_2.pull_back();
+    std::vector<class Person> temp_list = list.get_list();
+    Person temp_person_2 = temp_list.pull_back();
+    Person temp_person_1 = temp_list.at(list.size()-2);
 
+    
     ASSERT_EQ("Jan", temp_person_1.get_name());
     ASSERT_EQ("Kowalski", temp_person_1.get_surname());
     ASSERT_EQ(12345678987, temp_person_1.get_pesel());
@@ -29,5 +26,15 @@ TEST(AddPerson, function){
 } 
  
 TEST(DeleteAll, function){ 
-    //tworzenie osób w pętli for? 
+    Person person_1("Jan", "Kowalski", 12345678987, 854321683);
+    Person person_2("Anna", "Burczymucha", 12000000000, 101010101);
+    List list = {};
+    list.add_person(person_1);
+    //list.add_person(person_2);
+
+    //list.eraseall("yes");
+
+    //ASSERT_EQ(list.empty(), true);
+    
+    
 }
