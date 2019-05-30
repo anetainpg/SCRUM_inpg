@@ -30,11 +30,11 @@ TEST(DeleteAll, function){
     Person person_2("Anna", "Burczymucha", 12000000000, 101010101);
     List list = {};
     list.add_person(person_1);
-    //list.add_person(person_2);
+    list.add_person(person_2);
 
-    //list.eraseall("yes");
+    list.eraseall("yes");
 
-    //ASSERT_EQ(list.empty(), true);
+    ASSERT_EQ(list.empty(), true);
     
     
 }
