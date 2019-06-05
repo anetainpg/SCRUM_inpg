@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <fstream>
 #include "_Classes_DONE.hpp"
 
 
@@ -29,6 +30,9 @@ void add_person() {
             int numer;
             std::string txt;
 
+            std::fstream plik;
+            plik.open("nazwa_pliku", ios::in | ios::out);
+
             std::cout<<"Type PESEL number:"<<std::endl;
             std::cin>>number;
             new_person.set_pesel(number);
@@ -46,6 +50,8 @@ void add_person() {
             new_person.set_phone_num(number);
 
             list_.push_back(new_person);
+
+            plik.close();
         }
 
 
@@ -58,6 +64,7 @@ void edit_person(){
                 std::size_t n;
                 std::cout << "Enter number from a list:" << std::endl;
                 std::cin >> n;
+                
                 if (n > list_.size()  || n<=0) {
                     std::cout << "Wrong number, try again" << std::endl;
                     continue;
@@ -75,10 +82,15 @@ void edit_person(){
                                 case 0:
                                     return;
                                 case 1:
+                                    std::fstream plik;
+                                    plik.open("nazwa_pliku", ios::in | ios::out);
+
                                     std::string newname;
                                     std::cout<<"Type new name:"<<std::endl;
                                     std::cin>>newname;
                                     list_[n-1].set_name(newname);
+
+                                    plik.close()
                                     break;
 
                             }
@@ -96,6 +108,9 @@ void eraseall(std::string option){
 
             std::string choice = option;
             std::cout<<"Are you sure you want to delete all entries? Type YES to delete or NO to cancel"<<std::endl;
+
+            std::fstream plik;
+            plik.open("nazwa_pliku", ios::in | ios::out);
           
             if(choice=="YES"|| choice=="yes"){
                 list_.erase(list_.begin(),list_.end());
@@ -107,6 +122,7 @@ void eraseall(std::string option){
                 std::cout<<"Unrecognised command, please try again"<<std::endl;
          
             }
+            plik.close();
             return;
         }
 
