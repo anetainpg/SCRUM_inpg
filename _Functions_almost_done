@@ -1,0 +1,197 @@
+/* This file consists all of the functions essential for our database to work properly. There are functions which adds new records,
+    edits existing records, deletes/prints all of the records, checks correctness of the phone/pesel number. */
+
+
+
+#include <vector>
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include "_Classes_DONE.hpp"
+
+
+// Function view_list runs all the records from database.
+
+void view_list(){
+
+            for (std::size_t i=0;i<list_.size();i++){
+                std::cout<<i+1<<"."<<list_[i].get_name()<<" "<<list_[i].get_surname()<<" PESEL: "<<list_[i].get_pesel()<<" Phone nr: "<<list_[i].get_phone()<<std::endl;
+            }
+        }
+
+
+/* Function is meant for creating a new person record in our database. User has to give some information about new record, like:
+    pesel number, name, surname and phone number. */
+
+void add_person() {
+
+            Person new_person;
+            int numer;
+            std::string txt;
+
+            std::cout<<"Type PESEL number:"<<std::endl;
+            std::cin>>number;
+            new_person.set_pesel(number);
+
+            std::cout<<"Type Name:"<<std::endl;
+            std::cin>>txt;
+            new_person.set_name(txt);
+
+            std::cout<<"Type Surname:"<<std::endl;
+            std::cin>>txt;
+            new_person.set_surname(txt);
+
+            std::cout<<"Type Phone number:"<<std::endl;
+            std::cin>>number;
+            new_person.set_phone_num(number);
+
+            list_.push_back(new_person);
+        }
+
+
+/* Function edit_person edits a person from database. User chooses a number of the person he/she wants to edit
+    and then chooses what to change */
+
+void edit_person(){
+
+            for (;;){
+                std::size_t n;
+                std::cout << "Enter number from a list:" << std::endl;
+                std::cin >> n;
+                if (n > list_.size()  || n<=0) {
+                    std::cout << "Wrong number, try again" << std::endl;
+                    continue;
+                } else{
+                        int choice;
+                        do {
+                            std::cout << "What would you like to edit?" << std::endl;
+                            std::cout << "1. Name" << std::endl;
+                            std::cout << "2. Surname" << std::endl;
+                            std::cout << "3. PESEL number" << std::endl;
+                            std::cout << "4. Phone number" << std::endl;
+                            std::cout << "0. Exit"<<std::endl;
+                            std::cin >> choice;
+                            switch (choice) {
+                                case 0:
+                                    return;
+                                case 1:
+                                    std::string newname;
+                                    std::cout<<"Type new name:"<<std::endl;
+                                    std::cin>>newname;
+                                    list_[n-1].set_name(newname);
+                                    break;
+
+                            }
+                        }while(choice!=0);
+                }
+
+
+            }
+        }
+
+
+// Function eraseall deletes all the people from the database.
+
+void eraseall(std::string option){
+
+            std::string choice = option;
+            std::cout<<"Are you sure you want to delete all entries? Type YES to delete or NO to cancel"<<std::endl;
+          
+            if(choice=="YES"|| choice=="yes"){
+                list_.erase(list_.begin(),list_.end());
+                std::cout<<"Erasing everyone"<<std::endl;
+                return;
+            }else if(choice=="NO"||choice =="no"){
+                return;
+            }else{
+                std::cout<<"Unrecognised command, please try again"<<std::endl;
+         
+            }
+            return;
+        }
+
+
+// Function find_person_by_pesel is searching for particular person based on his/her pesel number 
+
+void find_person_by_pesel(float pesel){
+
+        for (auto& e : list_){
+            if (e.get_pesel()==pesel) {
+                view_person(e);
+                return;
+            }
+        }
+        std::cout<<"No matching person"<<std::endl;
+        return;
+    }
+    void find_person_by_phone(long phone) {
+        for (auto &e : list_) {
+            if (e.get_pesel()==phone) {
+                view_person(e);
+                return;
+            }
+
+
+        }
+
+
+/* Function check_pesel checks the pesel number that depends on:
+    1. length of the string
+    2. control sum of the numbers
+    3. if somebody input a string of zeros */
+
+bool check_pesel(std::string pesel){
+
+    int checking_pesel[10];
+    int checksum = 0;
+    if (pesel.length()!=11) return false;
+
+    for (auto x : pesel){
+        if (pesel[x] < 48 || pesel[x]> 57)return false;
+        else checking_pesel[x]=pesel[x]-48;
+    }
+
+        checksum+=(checking_pesel[0]*1);
+        checksum+=(checking_pesel[1]*3);
+        checksum+=(checking_pesel[2]*7);
+        checksum+=(checking_pesel[3]*9):
+        checksum+=(checking_pesel[4]*1);
+        checksum+=(checking_pesel[5]*3);
+        checksum+=(checking_pesel[6]*7);
+        checksum+=(checking_pesel[7]*9);
+        checksum+=(checking_pesel[8]*1);
+        checksum+=(checking_pesel[9]*3);
+
+    if (checksum==0 || checksum % 10 != pesel[10]) return false;
+    return True ;
+}
+
+
+/* Function check_string and check_tel_nr check if the user inputs the right phone number.
+    It checks the length of the string and the correctness of the input. 
+    It returns either True or False */
+
+bool check_string(std::string check_string){
+
+    if (check_string.length()==0) return false;
+    if (check_string==megawonsz9) return true;
+    else{
+        for (auto x : check_string){
+            if (check_string [x] != 32 && (check_string[x]<65 || !(check_string[x]>90 && check_string[x]<97) || check_string[x]>122)) return false;
+
+        }
+        return True;
+    }
+    else return False;
+}
+
+bool check_tel_nr(std::string &tel_no){
+
+    if (tel_nr.length()==9||tel_nr.length()==11){
+        for (auto x : pesel){
+            if (pesel[x] < 48 || pesel[x]> 57)return false;
+        }
+        return true;
+    }
+    else return false;
+
