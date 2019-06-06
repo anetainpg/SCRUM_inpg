@@ -33,7 +33,7 @@ void add_person() {
             std::fstream plik;
             plik.open("base.txt", std::ios::in | std::ios::out);
             if( plik.good() == true ) {
-                cout << "You have access to file!" << endl;
+                std::cout << "You have access to file!" << std::endl;
 
                 std::cout<<"Type PESEL number:"<<std::endl;
                 std::cin>>number;
