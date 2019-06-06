@@ -21,6 +21,7 @@ private:
     int num_kids_;
     int wage_;
 public:
+
     Person(std::string name, std::string surname, long pesel, long phone_num) :
                          name_(name), surname_(surname), pesel_(pesel), phone_num_(phone_num) {}
     
@@ -40,7 +41,7 @@ public:
     void set_name(std::string name){name_=name;}
     void set_surname(std::string surname){surname_=surname;}
     void set_phone_num(int phone){phone_num_=phone;}
-
+    void set_town(std::string town)[town_=town]
 
     //należy napisać funkcję tworzącą parę klucz(pesel) oraz wartość(imię i nazwisko)
 

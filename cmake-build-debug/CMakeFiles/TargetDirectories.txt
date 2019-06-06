@@ -1,3 +1,0 @@
-C:/Users/dawid/Desktop/Scrum/SCRUM_inpg/cmake-build-debug/CMakeFiles/Scrum_debug.dir
-C:/Users/dawid/Desktop/Scrum/SCRUM_inpg/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/dawid/Desktop/Scrum/SCRUM_inpg/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -35,25 +35,35 @@ void add_person() {
             if( plik.good() == true ) {
                 std::cout << "You have access to file!" << std::endl;
 
-                std::cout<<"Type PESEL number:"<<std::endl;
-                std::cin>>number;
+                std::cout << "Type PESEL number:" << std::endl;
+                std::cin >> number;
                 new_person.set_pesel(number);
-                plik<<number<<std::endl;
+                plik << number << std::endl;
 
-                std::cout<<"Type Name:"<<std::endl;
-                std::cin>>txt;
+                std::cout << "Type Name:" << std::endl;
+                std::cin >> txt;
                 new_person.set_name(txt);
-                plik<<txt<<std::endl;
+                plik << txt << std::endl;
 
-                std::cout<<"Type Surname:"<<std::endl;
-                std::cin>>txt;
+                std::cout << "Type Surname:" << std::endl;
+                std::cin >> txt;
                 new_person.set_surname(txt);
-                plik<<txt<<std::endl;
+                plik << txt << std::endl;
 
-                std::cout<<"Type Phone number:"<<std::endl;
-                std::cin>>number;
+                std::cout << "Type Phone number:" << std::endl;
+                std::cin >> number;
                 new_person.set_phone_num(number);
-                plik<<number<<std::endl;
+                plik << number << std::endl;
+
+                std::cout << "Do you want to add additional info? (Y/N)"
+                std::string
+                choice:
+                std::cin >> choice
+                if (choice == "Y") {
+                    std::cout << "Adress,please type name of Town:" << std::endl;
+                    new_person.set_town(std::cin>>)
+                }
+
 
                 list_.push_back(new_person);
 

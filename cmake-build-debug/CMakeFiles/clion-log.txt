@@ -1,4 +1,23 @@
 "C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\dawid\Desktop\Scrum\SCRUM_inpg
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/dawid/Desktop/Scrum/SCRUM_inpg/cmake-build-debug
+-- The C compiler identification is GNU 8.1.0
+-- The CXX compiler identification is GNU 8.1.0
+-- Check for working C compiler: C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe
+-- Check for working C compiler: C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe
+-- Check for working CXX compiler: C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at CMakeLists.txt:25 (target_include_directories):
+  Cannot specify include directories for target "inpg_2__test" which is not
+  built by this project.
+
+
+-- Found PythonInterp: C:/Users/dawid/AppData/Local/Programs/Python/Python37-32/python.exe (found version "3.7.3") 
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/dawid/Desktop/Scrum/SCRUM_inpg/cmake-build-debug/CMakeFiles/CMakeOutput.log".
