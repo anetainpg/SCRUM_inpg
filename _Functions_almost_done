@@ -137,7 +137,7 @@ void eraseall(std::string option){
 
 // Function find_person_by_pesel is searching for particular person based on his/her pesel number 
 
-void find_person_by_pesel(float pesel){
+void find_person_by_pesel(std::string pesel){
 
         for (auto& e : list_){
             if (e.get_pesel()==pesel) {
@@ -148,7 +148,7 @@ void find_person_by_pesel(float pesel){
         std::cout<<"No matching person"<<std::endl;
         return;
     }
-    void find_person_by_phone(long phone) {
+    void find_person_by_phone(std::string phone) {
         for (auto &e : list_) {
             if (e.get_pesel()==phone) {
                 view_person(e);
