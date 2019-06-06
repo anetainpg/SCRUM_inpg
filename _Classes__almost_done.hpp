@@ -16,10 +16,10 @@ private:
 
     std::string name_;
     std::string surname_;
-    long pesel_num_;
+    std::string pesel_num_;
     std::string town_;
     std::string street_;
-    long phone_num_;
+    std::string phone_num_;
     std::string eye_color_;
     std::string date_birth_;
     int height_;
@@ -33,17 +33,17 @@ public:
     
     std::string get_name()const { return name_; }
     std::string get_surname()const { return surname_; }
-    long get_pesel(){ return pesel_num_;}
+    std::string get_pesel(){ return pesel_num_;}
     std::string get_town()const { return town_; }
     std::string get_street()const { return street_; }
-    long get_phone()const { return phone_num_; }
+    std::string get_phone()const { return phone_num_; }
     std::string get_eye()const { return eye_color_; }
     std::string get_birth()const { return date_birth_; }
     int get_height()const { return height_; }
     int get_kids()const { return num_kids_; }
     int get_wage()const { return wage_; }
 
-    void set_pesel(int number){pesel_num_= number;}
+    void set_pesel(std::string number){pesel_num_= number;}
     void set_name(std::string name){name_= name;}
     void set_surname(std::string surname){surname_= surname;}
     void set_town(std::string town){town_= town;}
@@ -53,7 +53,7 @@ public:
     void set_kids(int num_kids){num_kids_= num_kids;}
     void set_wage(int wage){wage_= wage;}
     void set_height(int height){height_= height_;}
-    void set_phone_num(int phone){phone_num_= phone;}
+    void set_phone_num(std::string phone){phone_num_= phone;}
 
 };
 
