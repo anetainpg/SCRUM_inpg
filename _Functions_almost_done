@@ -27,32 +27,40 @@ void view_list(){
 void add_person() {
 
             Person new_person;
-            int numer;
+            int number;
             std::string txt;
 
             std::fstream plik;
-            plik.open("nazwa_pliku", ios::in | ios::out);
+            plik.open("base.txt", std::ios::in | std::ios::out);
+            if( plik.good() == true ) {
+                cout << "You have access to file!" << endl;
 
-            std::cout<<"Type PESEL number:"<<std::endl;
-            std::cin>>number;
-            new_person.set_pesel(number);
+                std::cout<<"Type PESEL number:"<<std::endl;
+                std::cin>>number;
+                new_person.set_pesel(number);
+                plik<<number<<std::endl;
 
-            std::cout<<"Type Name:"<<std::endl;
-            std::cin>>txt;
-            new_person.set_name(txt);
+                std::cout<<"Type Name:"<<std::endl;
+                std::cin>>txt;
+                new_person.set_name(txt);
+                plik<<txt<<std::endl;
 
-            std::cout<<"Type Surname:"<<std::endl;
-            std::cin>>txt;
-            new_person.set_surname(txt);
+                std::cout<<"Type Surname:"<<std::endl;
+                std::cin>>txt;
+                new_person.set_surname(txt);
+                plik<<txt<<std::endl;
 
-            std::cout<<"Type Phone number:"<<std::endl;
-            std::cin>>number;
-            new_person.set_phone_num(number);
+                std::cout<<"Type Phone number:"<<std::endl;
+                std::cin>>number;
+                new_person.set_phone_num(number);
+                plik<<number<<std::endl;
 
-            list_.push_back(new_person);
+                list_.push_back(new_person);
 
-            plik.close();
-        }
+                plik.close();
+            }
+            else std::cout << "Error! You are not allowed to have access to file " << std::endl;
+}
 
 
 /* Function edit_person edits a person from database. User chooses a number of the person he/she wants to edit
@@ -83,15 +91,19 @@ void edit_person(){
                                     return;
                                 case 1:
                                     std::fstream plik;
-                                    plik.open("nazwa_pliku", ios::in | ios::out);
+                                    plik.open("base.txt", std::ios::in | std::ios::out);
+                                    if( plik.good() == true ) {
+                                        std::cout << "You have access to file!" << std::endl;
 
-                                    std::string newname;
-                                    std::cout<<"Type new name:"<<std::endl;
-                                    std::cin>>newname;
-                                    list_[n-1].set_name(newname);
+                                        std::string newname;
+                                        std::cout<<"Type new name:"<<std::endl;
+                                        std::cin>>newname;
+                                        list_[n-1].set_name(newname);
+                                        plik<<newname<<std::endl;
 
-                                    plik.close()
-                                    break;
+                                        plik.close();
+                                    } else std::cout << "Error! You are not allowed to have access to file " << std::endl;
+                                        break;
 
                             }
                         }while(choice!=0);
@@ -108,9 +120,6 @@ void eraseall(std::string option){
 
             std::string choice = option;
             std::cout<<"Are you sure you want to delete all entries? Type YES to delete or NO to cancel"<<std::endl;
-
-            std::fstream plik;
-            plik.open("nazwa_pliku", ios::in | ios::out);
           
             if(choice=="YES"|| choice=="yes"){
                 list_.erase(list_.begin(),list_.end());
@@ -122,7 +131,6 @@ void eraseall(std::string option){
                 std::cout<<"Unrecognised command, please try again"<<std::endl;
          
             }
-            plik.close();
             return;
         }
 
