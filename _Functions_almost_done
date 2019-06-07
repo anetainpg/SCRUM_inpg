@@ -82,7 +82,7 @@ void edit_person(){
                 std::size_t n;
                 std::cout << "Enter number from a list:" << std::endl;
                 std::cin >> n;
-                
+
                 if (n > list_.size()  || n<=0) {
                     std::cout << "Wrong number, try again" << std::endl;
                     continue;
@@ -130,7 +130,7 @@ void eraseall(std::string option){
 
             std::string choice = option;
             std::cout<<"Are you sure you want to delete all entries? Type YES to delete or NO to cancel"<<std::endl;
-          
+
             if(choice=="YES"|| choice=="yes"){
                 list_.erase(list_.begin(),list_.end());
                 std::cout<<"Erasing everyone"<<std::endl;
@@ -139,13 +139,13 @@ void eraseall(std::string option){
                 return;
             }else{
                 std::cout<<"Unrecognised command, please try again"<<std::endl;
-         
+
             }
             return;
         }
 
 
-// Function find_person_by_pesel is searching for particular person based on his/her pesel number 
+// Function find_person_by_pesel is searching for particular person based on his/her pesel number
 
 void find_person_by_pesel(std::string pesel){
 
@@ -202,7 +202,7 @@ bool check_pesel(std::string pesel){
 
 
 /* Function check_string and check_tel_nr check if the user inputs the right phone number.
-    It checks the length of the string and the correctness of the input. 
+    It checks the length of the string and the correctness of the input.
     It returns either True or False */
 
 bool check_string(std::string check_string){
@@ -219,13 +219,12 @@ bool check_string(std::string check_string){
     else return False;
 }
 
-bool check_tel_nr(std::string &tel_no){
+bool check_tel_no(std::string &tel_no){
 
-    if (tel_nr.length()==9||tel_nr.length()==11){
-        for (auto x : pesel){
-            if (pesel[x] < 48 || pesel[x]> 57)return false;
+    if (tel_no.length()==9||tel_no.length()==11){
+        for (auto x :tel_no ){
+            if (tel_no[x] < 48 || tel_no[x]> 57)return false;
         }
         return true;
     }
     else return false;
-
